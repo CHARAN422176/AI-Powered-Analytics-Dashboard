@@ -1,4 +1,6 @@
 // lib/data.ts
+import { Payment } from "@/app/columns";
+
 export const keyMetrics = {
   revenue: 45231.89,
   users: 3123,
@@ -25,7 +27,7 @@ export const userAcquisitionData = [
 ];
 
 
-export const paymentData = [
+export const paymentData: Payment[] = [
     { id: "1", amount: 100, status: "success", email: "user1@example.com" },
     { id: "2", amount: 150, status: "processing", email: "user2@example.com" },
     { id: "3", amount: 200, status: "failed", email: "user3@example.com" },
