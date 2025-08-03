@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ADmyBRAND Insights - AI-Powered Analytics Dashboard
+
+A modern, visually stunning analytics dashboard built with Next.js, shadcn/ui, and Recharts. This project showcases a full-featured interface with data visualization, interactive tables, and advanced filtering.
+
+![Dashboard Screenshot](./public/screenshot.png)
+
+**Live Demo:** [View the Live Demo](https://ai-powered-analytics-dashboard-mauve.vercel.app/)
+
+---
+
+## Features
+
+-   **Dynamic Metric Cards:** At-a-glance view of key metrics like Revenue, Users, and Growth.
+-   **Interactive Charts:** Includes line, bar, and pie charts to visualize trends and data breakdowns.
+-   **Full-Featured Data Table:** A data table with sorting, filtering by email, and pagination.
+-   **Advanced Filtering:** A date range picker to filter dashboard data.
+-   **Responsive Design:** Looks great on desktop, tablet, and mobile.
+-   **Modern UI/UX:** Built with shadcn/ui, featuring dark/light modes and loading skeletons.
+-   **Simulated Real-time Updates:** User metrics card updates periodically to simulate a live data feed.
+-   **CSV Export:** Functionality to export table data as a CSV file.
+
+## Tech Stack
+
+-   **Framework:** Next.js 14+ (App Router)
+-   **UI:** React, Tailwind CSS, shadcn/ui
+-   **Charting:** Recharts
+-   **Deployment:** Vercel
 
 ## Getting Started
 
-First, run the development server:
+To run this project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git](https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git)
+    cd YOUR_REPOSITORY
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
