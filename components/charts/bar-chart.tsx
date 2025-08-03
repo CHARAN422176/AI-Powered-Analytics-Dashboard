@@ -3,8 +3,10 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import { UserAcquisitionDataPoint } from "@/lib/types"; // Import the new type
 
-export function MyBarChart({ data }: { data: any[] }) {
+// Use the specific type instead of any[]
+export function MyBarChart({ data }: { data: UserAcquisitionDataPoint[] }) {
   return (
     <Card>
       <CardHeader>

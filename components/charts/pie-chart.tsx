@@ -3,17 +3,13 @@
 
 import * as React from "react"
 import { Pie, PieChart, ResponsiveContainer, Cell } from "recharts"
-
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { UserAcquisitionDataPoint } from "@/lib/types"; // Import the new type
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
-export function MyPieChart({ data }: { data: any[] }) {
+// Use the specific type instead of any[]
+export function MyPieChart({ data }: { data: UserAcquisitionDataPoint[] }) {
   return (
     <Card>
       <CardHeader>

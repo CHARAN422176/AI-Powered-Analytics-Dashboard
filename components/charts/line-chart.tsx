@@ -3,8 +3,9 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Line, LineChart, ResponsiveContainer, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
+import { RevenueDataPoint } from "@/lib/types"; // Import the new type
 
-export function MyLineChart({ data }: { data: any[] }) {
+export function MyLineChart({ data }: { data: RevenueDataPoint[] }) { 
   return (
     <Card>
       <CardHeader>
