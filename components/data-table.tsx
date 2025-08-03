@@ -1,18 +1,19 @@
 // components/data-table.tsx
 "use client"
-import Papa from "papaparse";
+
 import * as React from "react"
 import {
   ColumnDef,
-  ColumnFiltersState, // Import for filtering
+  ColumnFiltersState,
   SortingState,
   flexRender,
   getCoreRowModel,
-  getFilteredRowModel, // Import for filtering
+  getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
+import Papa from "papaparse"
 
 import {
   Table,
@@ -35,7 +36,7 @@ export function DataTable<TData, TValue>({
   data,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]) // State for filtering
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
 
   const table = useReactTable({
     data,
@@ -44,17 +45,30 @@ export function DataTable<TData, TValue>({
     getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
-    onColumnFiltersChange: setColumnFilters, // Handler for filtering
-    getFilteredRowModel: getFilteredRowModel(), // Model for filtering
+    onColumnFiltersChange: setColumnFilters,
+    getFilteredRowModel: getFilteredRowModel(),
     state: {
       sorting,
-      columnFilters, // Add filtering state
+      columnFilters,
     },
   })
 
+  // V-- This function is now correctly placed inside the component --V
+  const handleExport = () => {
+    const csv = Papa.unparse(data);
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'payments.csv');
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div>
-      {/* V-- This is the new Input for filtering --V */}
       <div className="flex items-center py-4">
         <Input
           placeholder="Filter emails..."
@@ -133,16 +147,3 @@ export function DataTable<TData, TValue>({
     </div>
   )
 }
-
-const handleExport = () => {
-    const csv = Papa.unparse(data);
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-    const link = document.createElement('a');
-    const url = URL.createObjectURL(blob);
-    link.setAttribute('href', url);
-    link.setAttribute('download', 'payments.csv');
-    link.style.visibility = 'hidden';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-};
